@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>E10-变量提升案例2</title>
+</head>
+<body>
+    <script>
+    
+    //案例2
+    //比较
+    if( !("a" in window) ){ //"a" in window => true
+        var a = 1;
+    }
+    console.log( a );//a => undefined
+    //比较
+    if( !!("a" in window) ){
+        var a = 1;
+    }
+    console.log( a );//a => 1
+
+
+    </script>
+</body>
+</html>

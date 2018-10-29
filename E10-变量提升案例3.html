@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>E10-变量提升案例3</title>
+</head>
+<body>
+    <script>
+    //案例3
+    console.log( a );//a => function
+
+    var a = 20;     //对a进行重新赋值
+    console.log( a );//a => 20
+
+    function a(){   //创建 GEC 函数优先级高于变量优先级
+
+    }
+    </script>
+</body>
+</html>

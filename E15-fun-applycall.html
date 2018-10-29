@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>apply call借用方法调用模式</title>
+</head>
+<body>
+    
+
+    <script>
+    //call 和 apply 调用模式
+    function sum( a,b ){
+        console.log( this );
+        return a + b;
+    }
+    sum( 1,2 ); //this => window
+
+    var t = {
+        name:"laoma"
+    };
+
+    //f.call(fContext,p1,p2...)
+    var m = sum.call( t,2,3,9,10 );
+    console.log( m );   // =>5
+
+    var m2 = sum.apply( t,[1,2] );
+    console.log( m2 );  // => 3
+
+    //如果传递的第一个参数是简单类型（值类型，原始类型） 那么就会出现一些变化
+    //如果穿第一个参数是 null  undefined => window
+    //如果是number string boolean 转成对应的包装类型
+     sum.call( null,3,5 );
+     sum.call( undefined,3,5 );
+     sum.call( 2,3,5 );
+    </script>
+</body>
+</html>

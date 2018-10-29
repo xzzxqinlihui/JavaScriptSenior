@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>E10-变量提升案例4</title>
+</head>
+<body>
+    <script>
+        //案例 5
+        f();
+        function f(){
+            for( var k = 0;k < 10;k++  ){
+                console.log( k );//0-9
+            }
+            console.log( k );    //10  js没有块级作用域
+        }
+        //结果  0-10
+    </script>
+</body>
+</html>

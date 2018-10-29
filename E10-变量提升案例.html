@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>变量提升案例</title>
+</head>
+<body>
+    
+    <script>
+    //在浏览器中 全局对象就是window
+    //在全局作用域中声明 的变量和函数声明都会作为window的属性存在
+
+    var a = 9;
+    function b(){
+        console.log( a );
+    }
+
+    console.log( "a" in window );
+    console.log( window.a );
+    console.log( window["a"] );
+    console.log( window.b() );
+    console.log( window.b );
+    
+    </script>
+</body>
+</html>

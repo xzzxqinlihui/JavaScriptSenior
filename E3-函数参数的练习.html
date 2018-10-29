@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数参数的练习</title>
+</head>
+<body>
+    <script>
+    function max( a,b ){
+        console.log( arguments );
+        //每个函数内部都可以直接访问arguments,里面就是存放着我们传递给函数的参数
+        //arguments不是一个数组  但是跟数组类似
+        //arguments有一个length属性，属性值就是传递 实参 数的个数
+        for( var i=0;i < arguments.length;i++ ){
+            console.log( arguments[i] );    //打印所有的参数
+        }
+        if( a > b ){
+            return a;
+        }else{
+            return b;
+        }
+    }
+    console.log( max.length );  //函数的length属性是指 形参 的个数
+
+    var t = max( 9,10 );
+    console.log( t );
+
+    var m = max( 9,10,20,30 );
+    
+    /////////////////////////////////////////////////////////
+    //实现max方法，可以接受任意多个参数，返回这些参数中最大的那个值
+    function myMax(){
+        // 如果调用函数的方法没有传递参数，那么直接返回NaN
+        if( arguments.length <= 0 ){
+            return NaN;
+        }
+        
+        var max = arguments[0];
+        for( var i = 0;i < arguments.length;i++ ){
+            if( arguments[i] > max ){
+                max = arguments[i];
+            }
+
+        }
+        return max;
+    }
+
+    var m = myMax( 10,9,2,33,22,18 );
+    console.log( m );   // m => 33
+
+    </script>
+</body>
+</html>
