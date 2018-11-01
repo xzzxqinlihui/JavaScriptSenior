@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>E31-工厂模式创建对象.html</title>
+</head>
+<body>
+    
+    <script>
+    //E31-工厂模式创建对象.html
+    var a = {};//不能重复利用设置公共属性的代码
+
+    //工厂模式
+    //我需要建立10个猫对象  每个对象都有年龄 星星的属性  包括run方法
+    function createCat( age,name ){
+        var o = new Object();
+        o.age = age;
+        o.name = age;
+        o.run = function(){
+          console.log( o.name + "  run...." );  
+        };
+        return 0;
+    }
+    
+    var c = createCat( 19,"dddgg" );
+    //优点
+    //可以进行批量的创建  都有公共默认值和属性的对象
+    //缺点
+    //1  对象的方法不能跟其他对象共享   多占内存
+    //2  不能识别对象的原型及构造函数
+    // c instanceof createCat //false
+    </script>
+</body>
+</html>

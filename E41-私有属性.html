@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>私有属性</title>
+</head>
+
+<body>
+    <script>
+        //第一种模拟私有变量的方式
+        function Person() {
+            var age = 0;//私有变量只能通过getAge和setAge来操作age变量
+            this.getAge = function () {
+                return age;
+            };
+            this.setAge = function (a) {
+                age = a;
+            };
+        }
+
+        var p = new Person();
+        p.setAge(90);
+        //访问p的年龄
+        console.log(p.getAge());
+
+        //第二种模拟私有变量
+        function Per() {
+            var age = 0;
+            return {
+                getAge: function () {
+                    return age;
+                },
+                setAge: function (num) {
+                    age = num;
+                }
+            }
+        }
+
+        var p1 = Per();  //创建一个Per对象
+        p1.setAge(20);
+        console.log(p1.getAge());
+
+    </script>
+</body>
+
+</html>

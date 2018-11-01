@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js异常处理</title>
+</head>
+<body>
+    <script>
+    try{
+        console.log( 1 );
+        var t = new jflsj();//报错
+        console.log( 2 );
+    }catch(e){
+        console.log( e.message );
+    }finally{
+        console.log( "finally" );
+    }
+
+    alert( "232" );
+
+
+    //throw
+    try{
+        add( "w","4" );
+    }catch( e ){
+        console.dir( e );
+    }finally{
+        console.log("结束");
+    }
+
+
+    function add( a,b ){
+        if( typeof(a) != "number" ){
+            throw "传入参数不是整数类型";
+            // throw new Error( "传入参数不是整数类型" );    //ff  chrome浏览器
+
+            // IE浏览器   第一个参数是错误行号  第二个参数是 错误信息
+            // throw new Error(26,'传入参数不是整数类型');  //ie edge
+            // var e = new Error;
+            // e.message = "传入参数不是整数类型";
+            // e.name = "parame type error";
+            // throw e;
+
+            //  只要遇到throw  程序就停止了
+            //  代码跳转到catch语句  如果没有遇到catch语句当前js程序会结束
+        }
+        return a + b;
+    }
+
+    
+    </script>
+</body>
+</html>

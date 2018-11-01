@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>E44-正则的exec方法.html</title>
+</head>
+<body>
+    <script>
+    // E44-正则的exec方法.html
+    var str = "12,34,56";
+    var exp = /\d{2}/g;
+    // console.dir( exp.exec(str) );
+    var temp;
+
+    //exec方法:如果没有匹配项，那么就会返回null
+    //如果有匹配的返回一个数组
+    //0 p匹配的字符串
+    //index 匹配开始的索引
+    //input 要匹配的字符串   str 原始的字符串
+    while( (temp = exp.exec(str)) != null ){
+        console.log( exp.lastIndex );   //当前匹配完了之后，下一次匹配开始的位置
+        console.log( temp[0] );
+    }
+
+    //如果有分组
+    var temp1;
+    var str2 = "12abc,34,fde,45asf";
+    var exp2 = /\d{2}(\w)(\w+)/g;
+    while( (temp1 = exp2.exec(str2)) != null ){
+        console.log( exp2.lastIndex );   //当前匹配完了之后，下一次匹配开始的位置
+        console.log( temp1[0] );
+    }
+    
+    </script>
+</body>
+</html>
